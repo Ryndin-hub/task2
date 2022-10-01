@@ -1,0 +1,53 @@
+﻿  car.cpp
+  game.cpp
+c:\users\alex\source\repos\task2\task2\car.h(1): error C2011: 'Car': 'class' type redefinition
+  c:\users\alex\source\repos\task2\task2\car.h(1): note: see declaration of 'Car'
+c:\users\alex\source\repos\task2\task2\road.h(3): error C2011: 'Road': 'class' type redefinition
+  c:\users\alex\source\repos\task2\task2\road.h(3): note: see declaration of 'Road'
+c:\users\alex\source\repos\task2\task2\game.h(11): error C2079: 'Game::car' uses undefined class 'Car'
+c:\users\alex\source\repos\task2\task2\game.h(12): error C2079: 'Game::road' uses undefined class 'Road'
+c:\users\alex\source\repos\task2\task2\game.cpp(95): error C2664: 'void sf::Transformable::setPosition(const sf::Vector2f &)': cannot convert argument 1 from 'int' to 'const sf::Vector2f &'
+  c:\users\alex\source\repos\task2\task2\game.cpp(95): note: Reason: cannot convert from 'int' to 'const sf::Vector2f'
+  c:\users\alex\source\repos\task2\task2\game.cpp(95): note: No constructor could take the source type, or constructor overload resolution was ambiguous
+  main.cpp
+c:\users\alex\source\repos\task2\task2\car.h(1): error C2011: 'Car': 'class' type redefinition
+  c:\users\alex\source\repos\task2\task2\car.h(1): note: see declaration of 'Car'
+c:\users\alex\source\repos\task2\task2\road.h(3): error C2011: 'Road': 'class' type redefinition
+  c:\users\alex\source\repos\task2\task2\road.h(3): note: see declaration of 'Road'
+c:\users\alex\source\repos\task2\task2\game.h(11): error C2079: 'Game::car' uses undefined class 'Car'
+c:\users\alex\source\repos\task2\task2\game.h(12): error C2079: 'Game::road' uses undefined class 'Road'
+  road.cpp
+  rules.cpp
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u041F' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0435' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0440' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0441' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0447' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u043D' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0438' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u043F' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u043B' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u043E' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0448' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0439' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0430' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0437' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u043C' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u0442' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(27): warning C4566: character represented by universal-character-name '\u043A' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0414' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0432' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0438' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0436' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0435' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u043D' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u043E' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0441' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0442' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0440' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0447' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u043C' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u0430' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u043F' cannot be represented in the current code page (1252)
+c:\users\alex\source\repos\task2\task2\rules.cpp(30): warning C4566: character represented by universal-character-name '\u043B' cannot be represented in the current code page (1252)
+  Generating Code...

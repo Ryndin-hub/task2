@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "task2", "task2\task2.vcxproj", "{61998C28-A7D9-405D-B141-349014676269}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Dynamic|x64 = Debug Dynamic|x64
+		Debug Dynamic|x86 = Debug Dynamic|x86
+		Debug Static|x64 = Debug Static|x64
+		Debug Static|x86 = Debug Static|x86
+		Release Dynamic|x64 = Release Dynamic|x64
+		Release Dynamic|x86 = Release Dynamic|x86
+		Release Static|x64 = Release Static|x64
+		Release Static|x86 = Release Static|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{61998C28-A7D9-405D-B141-349014676269}.Debug Dynamic|x64.ActiveCfg = Debug Dynamic|x64
+		{61998C28-A7D9-405D-B141-349014676269}.Debug Dynamic|x64.Build.0 = Debug Dynamic|x64
+		{61998C28-A7D9-405D-B141-349014676269}.Debug Dynamic|x86.ActiveCfg = Debug Dynamic|Win32
+		{61998C28-A7D9-405D-B141-349014676269}.Debug Dynamic|x86.Build.0 = Debug Dynamic|Win32
+		{61998C28-A7D9-405D-B141-349014676269}.Debug Static|x64.ActiveCfg = Debug Static|x64
+		{61998C28-A7D9-405D-B141-349014676269}.Debug Static|x64.Build.0 = Debug Static|x64
+		{61998C28-A7D9-405D-B141-349014676269}.Debug Static|x86.ActiveCfg = Debug Static|Win32
+		{61998C28-A7D9-405D-B141-349014676269}.Debug Static|x86.Build.0 = Debug Static|Win32
+		{61998C28-A7D9-405D-B141-349014676269}.Release Dynamic|x64.ActiveCfg = Release Dynamic|x64
+		{61998C28-A7D9-405D-B141-349014676269}.Release Dynamic|x64.Build.0 = Release Dynamic|x64
+		{61998C28-A7D9-405D-B141-349014676269}.Release Dynamic|x86.ActiveCfg = Release Dynamic|Win32
+		{61998C28-A7D9-405D-B141-349014676269}.Release Dynamic|x86.Build.0 = Release Dynamic|Win32
+		{61998C28-A7D9-405D-B141-349014676269}.Release Static|x64.ActiveCfg = Release Static|x64
+		{61998C28-A7D9-405D-B141-349014676269}.Release Static|x64.Build.0 = Release Static|x64
+		{61998C28-A7D9-405D-B141-349014676269}.Release Static|x86.ActiveCfg = Release Static|Win32
+		{61998C28-A7D9-405D-B141-349014676269}.Release Static|x86.Build.0 = Release Static|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E41B2D6E-4613-4892-B699-3B48A637DB5E}
+	EndGlobalSection
+EndGlobal
