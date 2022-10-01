@@ -31,6 +31,8 @@ void Game::editMessage(std::string newMessage) {
 }
 
 void Game::run() {
+	std::srand(static_cast<unsigned int>(std::time(NULL)));
+
 	sf::RenderWindow window(sf::VideoMode(gameWidth, gameHeight, 32), "Road", sf::Style::Titlebar | sf::Style::Close);
 	window.setVerticalSyncEnabled(true);
 
@@ -98,7 +100,7 @@ void Game::run() {
 		}
 
 		if (moving_up) {
-			car.move();
+			car.move(&road);
 		}
 		if (moving_left) {
 			car.turnLeft();
@@ -109,8 +111,8 @@ void Game::run() {
 
 		window.clear(sf::Color::Black);
 
-		carBall.setPosition(car.x - car.radius, car.y - car.radius);
-		carLine.setPosition(car.x, car.y);
+		carBall.setPosition(car.x - car.radius, gameHeight / 2 - car.radius);
+		carLine.setPosition(car.x, gameHeight / 2);
 		carLine.setRotation(car.direction * (180 / 3.14159f));
 
 		window.draw(roadLeft);
@@ -120,7 +122,7 @@ void Game::run() {
 		for (int i = 0; i < road.turns.size(); i++) {
 			sf::RectangleShape turn(sf::Vector2f(100, 3));
 			turn.setFillColor(sf::Color::Black);
-			turn.setPosition(road.center,road.turns[i]-50);
+			turn.setPosition(road.center,road.turns[i] - 50 - car.y + gameHeight / 2);
 			turn.rotate(90);
 			window.draw(turn);
 		}

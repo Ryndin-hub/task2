@@ -358,6 +358,7 @@ copy /Y "$(SolutionDir)resources"  "$(TargetDir)resources\"</Command>
     <ClCompile Include="car.cpp" />
     <ClCompile Include="game.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="road.cpp" />
     <ClCompile Include="rules.cpp" />
   </ItemGroup>
   <ItemGroup>

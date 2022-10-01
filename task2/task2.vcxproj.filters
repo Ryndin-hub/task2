@@ -30,6 +30,9 @@
     <ClCompile Include="rules.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="road.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="extlibs\bin\x64\sfml-audio-2.dll">

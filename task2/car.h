@@ -1,4 +1,6 @@
 #pragma once
+#include "road.h"
+
 class Car {
 private:
     float speed = 3;
@@ -8,7 +10,7 @@ public:
     float x = 100;
     float y = 100;
     float direction = 1.5708f;
-    void move();
+    void move(Road *road);
     void turnLeft();
     void turnRight();
 };
