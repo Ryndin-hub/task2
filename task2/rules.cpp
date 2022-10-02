@@ -3,6 +3,7 @@
 Rules::Rules() {
 	std::ifstream file("resources/cfg.txt");
 	file >> maxAngleOppositeLane;
+	file.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	file >> maxAngleUturn;
 }
 

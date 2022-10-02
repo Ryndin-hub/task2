@@ -1,11 +1,13 @@
 #pragma once
 #include "road.h"
+#include <fstream>
 
 class Car {
 private:
-    float speed = 3;
-    float turnSpeed = 0.05f;
+    float speed;
+    float turnSpeed;
 public:
+    Car();
     float radius = 20;
     float x = 100;
     float y = 100;
