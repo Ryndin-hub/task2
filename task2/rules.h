@@ -10,6 +10,7 @@ private:
 	bool makingUturn = false;
 	bool incorrectUturn = false;
 	bool uTurnStartLeft = false;
+	bool checkUturnStart(Car car, Road road);
 	bool correctUturnCheck(Car car, Road road);
 	bool crossLaneCheck(Car car, Road road);
 	bool oppositeLaneCheck(Car car, Road road);

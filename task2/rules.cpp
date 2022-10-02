@@ -7,6 +7,19 @@ Rules::Rules() {
 	file >> maxAngleUturn;
 }
 
+bool Rules::checkUturnStart(Car car, Road road) {
+	if (car.x < road.center) {
+		if (car.direction * (180 / 3.14159) < 90 - 15) {
+			return true;
+		}
+	} else {
+		if (car.direction * (180 / 3.14159) < 270 - 15) {
+			return true;
+		}
+	}
+	return false;
+}
+
 bool Rules::correctUturnCheck(Car car, Road road) {
 	float centerDistance = abs(car.x - road.center);
 	float angleShift = abs(50 - centerDistance) / 50 * 90;
@@ -73,7 +86,7 @@ bool Rules::oppositeLaneCheck(Car car, Road road) {
 
 std::string Rules::checkAllRules(Car car, Road road) {
 	if (nearTurnCheck(car, road)) {
-		if (!makingUturn) {
+		if (!makingUturn && checkUturnStart(car,road)) {
 			uTurnStartLeft = car.x < road.center;
 			makingUturn = true;
 			incorrectUturn = false;
@@ -82,7 +95,9 @@ std::string Rules::checkAllRules(Car car, Road road) {
 			incorrectUturn = true;
 			return "Incorrect Uturn";
 		}
-		return "Makes a Uturn";
+		if (makingUturn) {
+			return "Makes a Uturn";
+		}
 	}
 	if (makingUturn) {
 		makingUturn = false;
