@@ -1,8 +1,8 @@
 #pragma once
 #include "vector"
-#include <ctime>
 
 class Road {
+
 public:
     float minY = -400;
     float maxY = 800;

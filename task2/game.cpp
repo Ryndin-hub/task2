@@ -3,17 +3,20 @@
 void Game::editMessage(std::string newMessage) {
 	if (newMessage != "0") {
 		bool isNew = true;
+
 		for (int i = 0; i < currentMessages.size(); i++) {
 			if (newMessage == currentMessages[i]) {
 				currentMessagesAge[i] = 70;
 				isNew = false;
 			}
 		}
+
 		if (isNew) {
 			currentMessagesAge.push_back(70);
 			currentMessages.push_back(newMessage);
 		}
 	}
+
 	for (int i = 0; i < currentMessages.size(); i++) {
 		currentMessagesAge[i] -= 1;
 		if (currentMessagesAge[i] <= 0) {
@@ -22,6 +25,7 @@ void Game::editMessage(std::string newMessage) {
 			i--;
 		}
 	}
+
 	std::string completeText = "";
 	for (int i = 0; i < currentMessages.size(); i++) {
 		completeText += currentMessages[i];
@@ -36,38 +40,38 @@ void Game::run() {
 	sf::RenderWindow window(sf::VideoMode(gameWidth, gameHeight, 32), "Road", sf::Style::Titlebar | sf::Style::Close);
 	window.setVerticalSyncEnabled(true);
 
-	sf::CircleShape carBall;
-	carBall.setRadius(20);
-	carBall.setOutlineThickness(1);
-	carBall.setOutlineColor(sf::Color::White);
-	carBall.setFillColor(sf::Color::Black);
+	sf::CircleShape carCircle;
+	carCircle.setRadius(car.radius);
+	carCircle.setOutlineThickness(1);
+	carCircle.setOutlineColor(sf::Color::White);
+	carCircle.setFillColor(sf::Color::Black);
 
-	sf::RectangleShape carLine(sf::Vector2f(20, 1));
-	carLine.setFillColor(sf::Color::White);
-	carLine.rotate(0);
+	sf::RectangleShape carDirectionLine(sf::Vector2f(20, 1));
+	carDirectionLine.setFillColor(sf::Color::White);
+	carDirectionLine.rotate(0);
 
-	sf::RectangleShape roadLeft(sf::Vector2f(800, 1));
-	roadLeft.setFillColor(sf::Color::White);
-	roadLeft.setPosition(50, 0);
-	roadLeft.rotate(90);
+	sf::RectangleShape roadLeftLine(sf::Vector2f(800, 1));
+	roadLeftLine.setFillColor(sf::Color::White);
+	roadLeftLine.setPosition(50, 0);
+	roadLeftLine.rotate(90);
 
-	sf::RectangleShape roadCenter(sf::Vector2f(800, 1));
-	roadCenter.setFillColor(sf::Color::White);
-	roadCenter.setPosition(200, 0);
-	roadCenter.rotate(90);
+	sf::RectangleShape roadCenterLine(sf::Vector2f(800, 1));
+	roadCenterLine.setFillColor(sf::Color::White);
+	roadCenterLine.setPosition(200, 0);
+	roadCenterLine.rotate(90);
 
-	sf::RectangleShape roadRight(sf::Vector2f(800, 1));
-	roadRight.setFillColor(sf::Color::White);
-	roadRight.setPosition(350, 0);
-	roadRight.rotate(90);
+	sf::RectangleShape roadRightLine(sf::Vector2f(800, 1));
+	roadRightLine.setFillColor(sf::Color::White);
+	roadRightLine.setPosition(350, 0);
+	roadRightLine.rotate(90);
 
 	sf::Font font;
 	font.loadFromFile("resources/sansation.ttf");
 	message.setFont(font);
 	message.setCharacterSize(15);
+	message.setStyle(sf::Text::Bold);
 	message.setPosition(0, 0);
 	message.setFillColor(sf::Color::Red);
-	message.setString("rules.checkAllRules(car, road)");
 
 	while (window.isOpen())
 	{
@@ -100,24 +104,26 @@ void Game::run() {
 		}
 
 		if (moving_up) {
-			car.move(&road);
+			car.moveForward(&road);
 		}
+
 		if (moving_left) {
 			car.turnLeft();
 		}
+
 		if (moving_right) {
 			car.turnRight();
 		}
 
 		window.clear(sf::Color::Black);
 
-		carBall.setPosition(car.x - car.radius, gameHeight / 2 - car.radius);
-		carLine.setPosition(car.x, gameHeight / 2);
-		carLine.setRotation(car.direction * (180 / 3.14159f));
+		carCircle.setPosition(car.x - car.radius, gameHeight / 2 - car.radius);
+		carDirectionLine.setPosition(car.x, gameHeight / 2);
+		carDirectionLine.setRotation(car.direction * (180 / 3.14159f));
 
-		window.draw(roadLeft);
-		window.draw(roadCenter);
-		window.draw(roadRight);
+		window.draw(roadLeftLine);
+		window.draw(roadCenterLine);
+		window.draw(roadRightLine);
 
 		for (int i = 0; i < road.turns.size(); i++) {
 			sf::RectangleShape turn(sf::Vector2f(100, 3));
@@ -127,8 +133,8 @@ void Game::run() {
 			window.draw(turn);
 		}
 
-		window.draw(carBall);
-		window.draw(carLine);
+		window.draw(carCircle);
+		window.draw(carDirectionLine);
 
 		editMessage(rules.checkAllRules(car, road));
 

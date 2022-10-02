@@ -1,11 +1,5 @@
-﻿  game.cpp
-c:\users\alex\source\repos\task2\task2\game.cpp(6): warning C4018: '<': signed/unsigned mismatch
-c:\users\alex\source\repos\task2\task2\game.cpp(17): warning C4018: '<': signed/unsigned mismatch
-c:\users\alex\source\repos\task2\task2\game.cpp(26): warning C4018: '<': signed/unsigned mismatch
-c:\users\alex\source\repos\task2\task2\game.cpp(115): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\alex\source\repos\task2\task2\game.cpp(122): warning C4018: '<': signed/unsigned mismatch
-  main.cpp
+﻿  car.cpp
   rules.cpp
-c:\users\alex\source\repos\task2\task2\rules.cpp(54): warning C4018: '<': signed/unsigned mismatch
+c:\users\alex\source\repos\task2\task2\rules.cpp(75): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
   task2.vcxproj -> C:\Users\alex\source\repos\task2\x86\Debug Dynamic\task2.exe

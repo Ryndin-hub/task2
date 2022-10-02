@@ -1,4 +1,5 @@
 90 - maximum angle before moving in opposite dirrection violation
 55 - maximum angle before incorrect Uturn
+15 - angle shift to detect an Uturn start
 3 - car speed
 0.05 - car turn speed

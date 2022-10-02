@@ -5,6 +5,7 @@
 #include "rules.h"
 
 class Game {
+
 private:
     const int gameWidth = 400;
     const int gameHeight = 800;
@@ -19,6 +20,7 @@ private:
     bool moving_right = false;
     bool moving_left = false;
     void editMessage(std::string newMessage);
+
 public:
     void run();
 };
