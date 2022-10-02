@@ -7,17 +7,33 @@ Rules::Rules() {
 }
 
 bool Rules::correctUturnCheck(Car car, Road road) {
-	if (car.x < road.center) {
-		if ((car.direction * (180 / 3.14159) < 270 + maxAngleUturn) && (car.direction * (180 / 3.14159) > 270 - maxAngleUturn)) {
-			return true;
+	float centerDistance = abs(car.x - road.center);
+	float angleShift = abs(50 - centerDistance) / 50 * 90;
+	if (uTurnStartLeft) {
+		if (car.x < road.center) {
+			if ((car.direction * (180 / 3.14159) < 90 - angleShift + maxAngleUturn) && (((car.direction * (180 / 3.14159) > 90 - angleShift - maxAngleUturn)) || ((car.direction * (180 / 3.14159) > 450 - angleShift - maxAngleUturn)))) {
+				return false;
+			}
+		}
+		else {
+			if (((car.direction * (180 / 3.14159) > 270 + angleShift - maxAngleUturn) && ((car.direction * (180 / 3.14159) < 270 + angleShift + maxAngleUturn))) || ((car.direction * (180 / 3.14159) > -90 + angleShift - maxAngleUturn) && ((car.direction * (180 / 3.14159) < -90 + angleShift + maxAngleUturn)))) {
+				return false;
+			}
 		}
 	}
-	if (car.x >= road.center) {
-		if ((car.direction * (180 / 3.14159) < 90 + maxAngleUturn) && (car.direction * (180 / 3.14159) > 90 - maxAngleUturn)) {
-			return true;
+	else {
+		if (car.x < road.center) {
+			if ((car.direction * (180 / 3.14159) < 90 + angleShift + maxAngleUturn) && (car.direction * (180 / 3.14159) > 90 + angleShift - maxAngleUturn)) {
+				return false;
+			}
+		}
+		else {
+			if ((car.direction * (180 / 3.14159) > 270 - angleShift - maxAngleUturn) && (car.direction * (180 / 3.14159) < 270 - angleShift + maxAngleUturn)) {
+				return false;
+			}
 		}
 	}
-	return false;
+	return true;
 }
 
 bool Rules::nearTurnCheck(Car car, Road road) {
@@ -57,6 +73,7 @@ bool Rules::oppositeLaneCheck(Car car, Road road) {
 std::string Rules::checkAllRules(Car car, Road road) {
 	if (nearTurnCheck(car, road)) {
 		if (!makingUturn) {
+			uTurnStartLeft = car.x < road.center;
 			makingUturn = true;
 			incorrectUturn = false;
 		}

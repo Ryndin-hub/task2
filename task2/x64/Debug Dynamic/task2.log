@@ -1,8 +1,2 @@
-﻿  car.cpp
-  game.cpp
-c:\users\alex\source\repos\task2\task2\game.cpp(115): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  main.cpp
-  road.cpp
-  rules.cpp
-  Generating Code...
+﻿  rules.cpp
   task2.vcxproj -> C:\Users\alex\source\repos\task2\x64\Debug Dynamic\task2.exe

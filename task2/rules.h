@@ -9,6 +9,7 @@ private:
 	float maxAngleUturn;
 	bool makingUturn = false;
 	bool incorrectUturn = false;
+	bool uTurnStartLeft = false;
 	bool correctUturnCheck(Car car, Road road);
 	bool crossLaneCheck(Car car, Road road);
 	bool oppositeLaneCheck(Car car, Road road);
