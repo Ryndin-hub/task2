@@ -1,5 +1,17 @@
 #include "road.h"
 
+float Road::getCenter() {
+	return center;
+}
+
+int Road::getNumberOfTurns() {
+	return turns.size();
+}
+
+float Road::getTurnByNumber(int i) {
+	return turns[i];
+}
+
 void Road::updateSize(float y) {
 	y -= 500;
 	if (y < minY) {

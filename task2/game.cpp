@@ -41,7 +41,7 @@ void Game::run() {
 	window.setVerticalSyncEnabled(true);
 
 	sf::CircleShape carCircle;
-	carCircle.setRadius(car.radius);
+	carCircle.setRadius(car.getRadius());
 	carCircle.setOutlineThickness(1);
 	carCircle.setOutlineColor(sf::Color::White);
 	carCircle.setFillColor(sf::Color::Black);
@@ -117,18 +117,18 @@ void Game::run() {
 
 		window.clear(sf::Color::Black);
 
-		carCircle.setPosition(car.x - car.radius, gameHeight / 2 - car.radius);
-		carDirectionLine.setPosition(car.x, gameHeight / 2);
-		carDirectionLine.setRotation(car.direction * (180 / 3.14159f));
+		carCircle.setPosition(car.getX() - car.getRadius(), gameHeight / 2 - car.getRadius());
+		carDirectionLine.setPosition(car.getX(), gameHeight / 2.0);
+		carDirectionLine.setRotation(car.getDirection() * (180 / 3.14159f));
 
 		window.draw(roadLeftLine);
 		window.draw(roadCenterLine);
 		window.draw(roadRightLine);
 
-		for (int i = 0; i < road.turns.size(); i++) {
+		for (int i = 0; i < road.getNumberOfTurns(); i++) {
 			sf::RectangleShape turn(sf::Vector2f(100, 3));
 			turn.setFillColor(sf::Color::Black);
-			turn.setPosition(road.center,road.turns[i] - 50 - car.y + gameHeight / 2);
+			turn.setPosition(road.getCenter(), road.getTurnByNumber(i) - 50 - car.getY() + gameHeight / 2);
 			turn.rotate(90);
 			window.draw(turn);
 		}

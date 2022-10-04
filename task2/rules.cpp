@@ -13,9 +13,9 @@ Rules::Rules() {
 }
 
 bool Rules::isUturnStarted(Car car, Road road) {
-	float directionDegrees = car.direction * (180 / 3.14159f);
+	float directionDegrees = car.getDirection() * (180 / 3.14159f);
 
-	if (car.x < road.center) {
+	if (car.getX() < road.getCenter()) {
 		if (directionDegrees < 90 - UturnAngleStart) {
 			return true;
 		}
@@ -29,12 +29,12 @@ bool Rules::isUturnStarted(Car car, Road road) {
 }
 
 bool Rules::isUturnCorrect(Car car, Road road) {
-	float centerDistance = abs(car.x - road.center);
+	float centerDistance = abs(car.getX() - road.getCenter());
 	float angleShift = abs(50 - centerDistance) / 50 * 90;
-	float directionDegrees = car.direction * (180 / 3.14159f);
+	float directionDegrees = car.getDirection() * (180 / 3.14159f);
 
 	if (uTurnStartLeft) {
-		if (car.x < road.center) { 
+		if (car.getX() < road.getCenter()) {
 			if (
 				(directionDegrees < 90 - angleShift + maxAngleUturn) 
 				&& 
@@ -54,7 +54,7 @@ bool Rules::isUturnCorrect(Car car, Road road) {
 		}
 	}
 	else {
-		if (car.x < road.center) {
+		if (car.getX() < road.getCenter()) {
 			if ((directionDegrees < 90 + angleShift + maxAngleUturn) &&
 				(directionDegrees > 90 + angleShift - maxAngleUturn)) {
 				return false;
@@ -72,11 +72,11 @@ bool Rules::isUturnCorrect(Car car, Road road) {
 }
 
 bool Rules::isNearUturn(Car car, Road road) {
-	for (int i = 0; i < road.turns.size(); i++) {
-		float x1 = car.x;
-		float y1 = car.y;
-		float x2 = road.center;
-		float y2 = road.turns[i];
+	for (int i = 0; i < road.getNumberOfTurns(); i++) {
+		float x1 = car.getX();
+		float y1 = car.getY();
+		float x2 = road.getCenter();
+		float y2 = road.getTurnByNumber(i);
 
 		if (pow(x2 - x1, 2) + pow(y2 - y1, 2) < 1000) {
 			return true;
@@ -87,7 +87,7 @@ bool Rules::isNearUturn(Car car, Road road) {
 }
 
 bool Rules::isCrossingLane(Car car, Road road) {
-	if ((road.center - car.radius < car.x) && (road.center + car.radius > car.x)) {
+	if ((road.getCenter() - car.getRadius() < car.getX()) && (road.getCenter() + car.getRadius() > car.getX())) {
 		return true;
 	}
 
@@ -95,9 +95,9 @@ bool Rules::isCrossingLane(Car car, Road road) {
 }
 
 bool Rules::isMovingInOppositeDirection(Car car, Road road) {
-	float directionDegrees = car.direction * (180 / 3.14159f);
+	float directionDegrees = car.getDirection() * (180 / 3.14159f);
 
-	if (car.x < road.center) {
+	if (car.getX() < road.getCenter()) {
 		if ((directionDegrees < 270 + maxAngleOppositeLane) && (directionDegrees > 270 - maxAngleOppositeLane)) {
 			return true;
 		}
@@ -115,7 +115,7 @@ std::string Rules::checkAllRules(Car car, Road road) {
 	if (isNearUturn(car, road)) {
 
 		if (!makingUturn && isUturnStarted(car,road)) {
-			uTurnStartLeft = car.x < road.center;
+			uTurnStartLeft = car.getX() < road.getCenter();
 			makingUturn = true;
 			incorrectUturn = false;
 		}

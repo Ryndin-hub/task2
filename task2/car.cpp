@@ -12,6 +12,22 @@ Car::Car() {
 	file >> turnSpeed;
 }
 
+float Car::getX() {
+	return x;
+}
+
+float Car::getY() {
+	return y;
+}
+
+float Car::getDirection() {
+	return direction;
+}
+
+float Car::getRadius() {
+	return radius;
+}
+
 void Car::moveForward(Road *road) {
 	x += speed * cos(direction);
 	y += speed * sin(direction);
